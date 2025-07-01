@@ -1,5 +1,6 @@
 from app.vectordb.chromadb.handler import ChromaDataBase
 from app.vectordb.mongodb.handler import AltasMongoDB
+from app.vectordb.qdrantdb.handler import QdrantDataBase
 
 from loguru import logger
 
@@ -13,6 +14,7 @@ class VectorDBLoader:
         vectordb_classes = {
             "chroma": ChromaDataBase,
             "mongodb": AltasMongoDB,
+            "qdrant": QdrantDataBase
         }
         vectordb_provider = self.config.get('name',{})
         connection_params = self.config.get('params',{})

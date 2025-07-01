@@ -13,6 +13,8 @@ class DefaultEmbedding:
                 return ChromaDefaultEmbedding().load_emb()
             case "mongodb":
                 return DefaultEmbeddingModel()
+            case "qdrant":
+                return DefaultEmbeddingModel()
             case _:
                 logger.error(f"Unsupported vectordb_key: {self.key}")
                 return None

@@ -4,7 +4,7 @@ from loguru import logger
 
 from app.repository import connector as repo
 from sqlalchemy.orm import Session
-from app.vectordb import chromadb, mongodb, loader
+from app.vectordb import loader
 
 
 def test_plugin_connection(db_configs, config, provider_class):

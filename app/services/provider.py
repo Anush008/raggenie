@@ -248,7 +248,7 @@ def vector_embedding_connector(config, db_config):
     #         return err, False
 
     match config.vectordb_config["key"]:
-        case ("chroma" | "mongodb"):
+        case ("chroma" | "mongodb" | "qdrant"):
             return test_vector_db_credentials(db_config,config, config.vectordb_config["key"])
         case _:
             return None, "Unsupported Vector Database Provider"
